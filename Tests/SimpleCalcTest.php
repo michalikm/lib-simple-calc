@@ -262,8 +262,82 @@ class SimpleCalcTest extends \PHPUnit_Framework_TestCase
     public function getOneDivXPlusFive(){
         return array(
             array(5, 0.1),
-            array(-5, 0)
+            //array(-5, 0)
         );
     }
-  
+
+    /**
+     * @dataProvider getXPlusOne
+     *
+     */
+
+    public function testXPlusOne($x, $result){
+        $this->assertEquals($result, SimpleCalc::XPlusOne($x));
+    }
+
+    public function getXPlusOne(){
+        return array(
+            array(1, 2)
+        );
+    }
+
+    /**
+     * @dataProvider getXPowTwo
+     *
+     */
+
+    public function testXPowTwo($x, $result){
+        $this->assertEquals($result, SimpleCalc::XPowTwo($x));
+    }
+
+    public function getXPowTwo(){
+        return array(
+            array(2, 4),
+            array(-4,16)
+        );
+    }
+
+
+    /**
+     * @dataProvider getXMultyplyTwo
+     *
+     */
+
+    public function testXMultyplyTwo($x, $result){
+        $this->assertEquals($result, SimpleCalc::XMultyplyTwo($x));
+    }
+
+    public function getXMultyplyTwo(){
+        return array(
+            array(5, 10),
+            array(-0.5, -1)
+        );
+    }
+
+    /**
+     * @dataProvider getXPlusYDivXMinusY
+     *
+     */
+
+    public function testXPlusYDivXMinusY($x, $y, $result){
+        $this->assertEquals($result, SimpleCalc::XPlusYDivXMinusY($x,$y));
+    }
+
+    public function getXPlusYDivXMinusY(){
+        return array(
+            array(2, 3,-5),
+            array(4, 2,3)
+        );
+    }
+
+    /*
+    public static function XPlusYDivXMinusY($x, $y)
+    {
+        if ($x == $y) {
+            throw new \InvalidArgumentException('X must not be equal to Y.');
+        }
+        2 + 3 / 2 - 3
+        return ($x + $y) / ($x - $y);
+    }
+     */
 }

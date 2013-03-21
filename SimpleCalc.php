@@ -148,13 +148,13 @@ class SimpleCalc
      * @return float The result of division of 1/x
      * @throws \InvalidArgumentException The exception is thrown when the divisor $b is equal to 0
      */
-    public static function oneDivX ($x)
+    public static function oneDivX($x)
     {
         if ($x == 0) {
             throw new \InvalidArgumentException('Divisor must not be equal to 0.');
         }
 
-        return 1/$x;
+        return 1 / $x;
     }
 
     /**
@@ -217,14 +217,14 @@ class SimpleCalc
      */
     public static function xSquarePlus1DivideByXMinus1($x)
     {
-        if($x == 1) {
+        if ($x == 1) {
             throw new \InvalidArgumentException('Divisor must not be equal to 0.');
         }
 
         return ($x * $x + 1) / ($x - 1);
     }
 
-     /**
+    /**
      * Function f(x) = (1 + x) / (1 - x)
      *
      * @param mixed $x Argument (integer of float)
@@ -238,7 +238,7 @@ class SimpleCalc
             throw new \InvalidArgumentException('$x must not be equal to 1.');
         }
 
-        return (1 + $x)  / (1 - $x);
+        return (1 + $x) / (1 - $x);
     }
 
     /**
@@ -257,7 +257,7 @@ class SimpleCalc
             throw new \InvalidArgumentException('Divisor must not be equal to 0.');
         }
 
-        return ((28 + $x) / ( 1 - $x ));
+        return ((28 + $x) / (1 - $x));
     }
 
     /**
@@ -272,7 +272,7 @@ class SimpleCalc
     {
         return (9 + $x) * 5;
     }
-    
+
     /*
      * F(x) = 1/(x+5)
      * 
@@ -280,13 +280,70 @@ class SimpleCalc
      * 
      * @return float The result of F(x)
      */
-    
-    public static function oneDivXPlusFive($x){
+
+    public static function oneDivXPlusFive($x)
+    {
         if ($x == -5) {
             throw new \InvalidArgumentException('Divisor must not be equal to -5.');
         }
-        
-        return 1/($x+5);
+
+        return 1 / ($x + 5);
     }
 
+     /*
+     * F(x) = 1 + x
+     *
+     * @param mixed $x Argument (integer or float)
+     *
+     * @return float The result of F(x)
+     */
+
+    public static function XPlusOne($x)
+    {
+        return $x + 1;
+    }
+
+     /*
+    * F(x) = x^2
+    *
+    * @param mixed $x Argument (integer or float)
+    *
+    * @return float The result of F(x)
+    */
+
+    public static function XPowTwo($x)
+    {
+        return $x * $x;
+    }
+
+    /*
+    * F(x) = 2*x
+    *
+    * @param mixed $x Argument (integer or float)
+    *
+    * @return float The result of F(x)
+    */
+
+    public static function XMultyplyTwo($x)
+    {
+        return 2* $x;
+    }
+
+    /*
+    * F(x,y) = (x + y)/(x - y)
+    *
+    * @param mixed $x First number (integer or float)
+    * @param mixed $y Second number (integer or float)
+    *
+    * @return float The result of F(x,y)
+    */
+
+    public static function XPlusYDivXMinusY($x, $y)
+    {
+        if ($x == $y) {
+            throw new \InvalidArgumentException('X must not be equal to Y.');
+        }
+
+        return ($x + $y) / ($x - $y);
+    }
 }
